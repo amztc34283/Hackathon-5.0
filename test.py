@@ -11,7 +11,7 @@ with open('test.json') as \
         profile_json:
     profile = service.profile(
         profile_json.read(),
-        content_type='application/json',
+        content_type='application/json', ## use text/plain if it is plain text
         raw_scores=True,
         consumption_preferences=True).get_result()
 
