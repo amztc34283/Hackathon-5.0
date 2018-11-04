@@ -7,7 +7,7 @@ service = PersonalityInsightsV3(
      url='https://gateway-wdc.watsonplatform.net/personality-insights/api',
      iam_apikey='W7wjiNAzqzpVxaXhYMFMQ138rNY6g7GrwXVYj5nHzU7l')
 
-with open('test.json') as \
+with open('huge.json') as \
         profile_json:
     profile = service.profile(
         profile_json.read(),
@@ -16,3 +16,9 @@ with open('test.json') as \
         consumption_preferences=True).get_result()
 
 print(json.dumps(profile, indent=2))
+
+profile = profile.content
+cr = csv.reader(profile.splitlines())
+my_list = list(cr)
+for row in my_list:
+    print(row)
