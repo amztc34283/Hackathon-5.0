@@ -1,4 +1,5 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask import Flask, flash, redirect, render_template, request, session, abort, url_for
+
 app = Flask(__name__)
  
 @app.route("/")
@@ -20,6 +21,12 @@ def testsidebar():
     labels = ["Billy","Michael","Brandon","Tony","Jonah"]
     values = [10,10,10,10,10]
     return render_template('testsidebar.html',values=values,labels=labels)
+
+@app.route("/challenge")
+def challenge():
+    labels = ["Billy","Michael"]
+    values = [0,0]
+    return render_template('challenge.html',values=values,labels=labels)
 
 if __name__ == "__main__":
     app.run()
