@@ -1,3 +1,5 @@
+## Example Usage: python clean_msg.py <message.json> <Person_Name>
+
 import json
 import sys
 import time
