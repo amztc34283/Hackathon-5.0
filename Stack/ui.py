@@ -20,31 +20,31 @@ def test():
 def openness():
     labels = ["Billy","Michael","Brandon","Tony","Jonah"]
     values = [5,5,5,5,5]
-    return render_template('/personality/openness.html',values=values,labels=labels)
+    return render_template('/personality/chart.html',values=values,labels=labels)
 
 @app.route("/personality/conscientiousness")
 def conscientiousness():
     labels = ["Billy","Michael","Brandon","Tony","Jonah"]
     values = [6,6,6,6,6]
-    return render_template('/personality/conscientiousness.html',values=values,labels=labels)
+    return render_template('/personality/chart.html',values=values,labels=labels)
 
 @app.route("/personality/agreeableness")
 def agreeableness():
     labels = ["Billy","Michael","Brandon","Tony","Jonah"]
     values = [4,4,4,4,4]
-    return render_template('/personality/agreeableness.html',values=values,labels=labels)
+    return render_template('/personality/chart.html',values=values,labels=labels)
 
 @app.route("/personality/introversion")
 def introversion():
     labels = ["Billy","Michael","Brandon","Tony","Jonah"]
     values = [7,7,7,7,7]
-    return render_template('/personality/introversion.html',values=values,labels=labels)
+    return render_template('/personality/chart.html',values=values,labels=labels)
 
 @app.route("/personality/emotional_range")
 def emotional_range():
     labels = ["Billy","Michael","Brandon","Tony","Jonah"]
     values = [8,8,8,8,8]
-    return render_template('/personality/emotional_range.html',values=values,labels=labels)
+    return render_template('/personality/chart.html',values=values,labels=labels)
 
 @app.route("/testchallenge")
 def testchallenge():
