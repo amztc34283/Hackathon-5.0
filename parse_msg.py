@@ -15,22 +15,22 @@ def parse_msg(file_name, name):
         return content_str
 
 
-def make_json(content_str):
+def make_json(content_str, name):
     data = {}
     data["content_items"] = []
     data["content_items"].append({
         "content":content_str,
         "content_type": "text/plain",
         "created" :str(time.time()) })
-    with open("watson_in.json", "w") as out_file:
+    with open("watson_in/" + name + ".json", "w+") as out_file:
         json.dump(data, out_file)
 
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
-        "Correct usage is python clean_msg.py <message.json> <Person_Name>"
+        print("Correct usage is python clean_msg.py <message.json> <Person_Name>")
     else:
         file_name = sys.argv[1]
         name = sys.argv[2]
         content_str = parse_msg(file_name, name)
-        make_json(content_str)
+        make_json(content_str, name)
