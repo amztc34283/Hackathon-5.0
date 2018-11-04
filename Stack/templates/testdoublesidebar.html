@@ -8,7 +8,12 @@
 
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
   <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-  <a href="{{url_for('openness')}}" class="w3-bar-item w3-button">Openness</a>
+  <button onclick="openChallenge()" class="w3-bar-item w3-button">Challenge</button>
+</div>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="challengeMenu">
+  <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <button onclick="openChallenge()" class="w3-bar-item w3-button">Challenge</button>
 </div>
 
 <div class="w3-teal">
@@ -66,6 +71,10 @@ function openLeftMenu() {
 }
 function closeLeftMenu() {
     document.getElementById("leftMenu").style.display = "none";
+}
+
+function openChallenge() {
+    document.getElementById("challengeMenu").style.display = "block";
 }
 
 </script>

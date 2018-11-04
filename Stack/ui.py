@@ -46,5 +46,9 @@ def emotional_range():
     values = [8,8,8,8,8]
     return render_template('/personality/emotional_range.html',values=values,labels=labels)
 
+@app.route("/testchallenge")
+def testchallenge():
+    return render_template('testdoublesidebar.html')
+
 if __name__ == "__main__":
     app.run()
