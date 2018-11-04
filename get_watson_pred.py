@@ -1,7 +1,7 @@
 from watson_developer_cloud import PersonalityInsightsV3
 import json
 import sys
-
+import os
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
@@ -13,14 +13,14 @@ if __name__ == '__main__':
         url='https://gateway-wdc.watsonplatform.net/personality-insights/api',
         iam_apikey='W7wjiNAzqzpVxaXhYMFMQ138rNY6g7GrwXVYj5nHzU7l')
 
-        with open("test.json") as profile_json:
-            print(file_name)
-            print(profile_json)
+        with open('watson_in/Ryan Xie.json') as \
+                profile_json:
             profile = service.profile(
-            profile_json.read(),
-            content_type='application/json',
-            raw_scores=True,
-            consumption_preferences=True).get_result()
+                profile_json.read(),
+                content_type='application/json', 
+                raw_scores=True,
+                consumption_preferences=True).get_result()
 
-            with open("watson_out/"+ name +".json", "w+") as out_file:
-                json.dump(profile, out_file)
+
+        with open("watson_out/"+ name +".json", "w+") as out_file:
+            json.dump(profile, out_file, indent=2)
