@@ -28,5 +28,9 @@ def challenge():
     values = [0,0]
     return render_template('challenge.html',values=values,labels=labels)
 
+@app.route("/testchallenge")
+def testchallenge():
+    return render_template('testdoublesidebar.html')
+
 if __name__ == "__main__":
     app.run()
