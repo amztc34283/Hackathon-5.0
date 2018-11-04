@@ -17,7 +17,9 @@ def test():
 
 @app.route("/testsidebar")
 def testsidebar():
-    return render_template('testsidebar.html')
+    labels = ["Billy","Michael","Brandon","Tony","Jonah"]
+    values = [10,10,10,10,10]
+    return render_template('testsidebar.html',values=values,labels=labels)
 
 if __name__ == "__main__":
     app.run()
