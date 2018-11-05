@@ -8,6 +8,18 @@ import os
 def longest_conv(file_path):
     return os.path.getsize(file_path)
 
+def get_msg_file_path(inbox_path, name):
+    for root, dirs, files in os.walk(inbox_path):
+        conv_name = root.rsplit('/', 1)[-1]
+        conv_name = conv_name.split('_', 1)[0]
+        conv_name = conv_name.lower()
+        given_name = name.replace(" ", "").lower()
+
+        if (given_name == conv_name and 'message.json' in files):
+            results.append(root + "/message.json")
+
+    largest_file_path = max(results, key=longest_conv)
+
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         print("Correct usage is python locate_conv.py <Person_Name> <facebook inbox file")

@@ -4,6 +4,8 @@ import json
 import sys
 import time
 import os
+import datetime
+
 
 
 # Parses a message from a facebook messenger json file, extracts the content
@@ -15,6 +17,11 @@ def parse_msg(msg_dict, name):
     content_str = " ".join(content_lst)
     return content_str
 
+
+# Parses messages within a date interval
+def parse_msg_time(msg_dict, name, start_date, end_date):
+    # Todo
+    pass
 
 # Creates a input json for the watson personality analytics api call
 # Places the json in the watson in folder

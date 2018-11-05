@@ -13,14 +13,13 @@ if __name__ == '__main__':
         url='https://gateway-wdc.watsonplatform.net/personality-insights/api',
         iam_apikey='W7wjiNAzqzpVxaXhYMFMQ138rNY6g7GrwXVYj5nHzU7l')
 
-        with open('watson_in/Ryan Xie.json') as \
+        with open(file_name) as \
                 profile_json:
             profile = service.profile(
                 profile_json.read(),
                 content_type='application/json', 
                 raw_scores=True,
                 consumption_preferences=True).get_result()
-
 
         with open("watson_out/"+ name +".json", "w+") as out_file:
             json.dump(profile, out_file, indent=2)
